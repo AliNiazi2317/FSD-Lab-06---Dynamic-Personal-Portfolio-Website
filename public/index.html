@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio | Ali Haider Niazi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">My<span>Portfolio.</span></a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <button id="editBtn" class="btn">Edit Portfolio</button>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+            <h1>Hi, I'm <span id="heroName">Your Name</span></h1>
+            <h2 id="heroTitle">Computer Science Student</h2>
+            <p id="heroAbout">I am passionate about technology, programming and creating useful digital experiences.</p>
+            <a href="#projects" class="btn">Explore My Work <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+            <img id="heroImage" src="https://placehold.co/320x320/172554/ffffff?text=Your+Photo" alt="Profile photo">
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <p class="eyebrow">GET TO KNOW ME</p>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+            <p id="aboutText">Your personal introduction will appear here.</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> <span id="emailText">Email not added</span></p>
+                <p><i class="fas fa-phone"></i> <span id="phoneText">Phone not added</span></p>
+                <p><i class="fas fa-location-dot"></i> <span id="locationText">Location not added</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section alternate">
+        <p class="eyebrow">WHAT I KNOW</p>
+        <h2 class="section-title">My Skills</h2>
+        <div id="skillsList" class="card-grid"></div>
+    </section>
+
+    <section id="education" class="section">
+        <p class="eyebrow">MY LEARNING JOURNEY</p>
+        <h2 class="section-title">Education</h2>
+        <div id="educationList" class="card-grid"></div>
+    </section>
+
+    <section id="experience" class="section alternate">
+        <p class="eyebrow">MY PROFESSIONAL JOURNEY</p>
+        <h2 class="section-title">Experience</h2>
+        <div id="experienceList" class="card-grid"></div>
+    </section>
+
+    <section id="projects" class="section">
+        <p class="eyebrow">WHAT I HAVE BUILT</p>
+        <h2 class="section-title">My Projects</h2>
+        <div id="projectsList" class="card-grid"></div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2 class="section-title">Have a Project in Mind?</h2>
+        <p>Feel free to contact me for collaboration and opportunities.</p>
+        <a id="contactEmail" href="mailto:" class="btn">Contact Me <i class="fas fa-paper-plane"></i></a>
+    </section>
+</main>
+
+<footer>
+    <p>© <span id="year"></span> <span id="footerName">My Portfolio</span>. Built with HTML, CSS, jQuery AJAX, Node.js and MySQL.</p>
+</footer>
+
+<!-- Portfolio editor -->
+<div id="editorModal" class="modal">
+    <div class="modal-content">
+        <button id="closeModal" class="close-btn" aria-label="Close">&times;</button>
+        <p class="eyebrow">PORTFOLIO MANAGEMENT</p>
+        <h2>Edit Your Profile</h2>
+
+        <form id="profileForm" enctype="multipart/form-data">
+            <label>Full Name *</label>
+            <input name="full_name" required placeholder="Enter your full name">
+
+            <label>Professional Title</label>
+            <input name="title" placeholder="e.g. Computer Science Student">
+
+            <label>Email</label>
+            <input name="email" type="email" placeholder="you@example.com">
+
+            <label>Phone</label>
+            <input name="phone" placeholder="Your phone number">
+
+            <label>Location</label>
+            <input name="location" placeholder="Your city">
+
+            <label>About Me</label>
+            <textarea name="about" rows="4" placeholder="Write a short introduction"></textarea>
+
+            <label>Profile Image (JPG, PNG or WEBP)</label>
+            <input name="profile_image" type="file" accept=".jpg,.jpeg,.png,.webp">
+
+            <button class="btn" type="submit">Save Profile</button>
+        </form>
+
+        <p id="profileMessage" class="message"></p>
+        <hr>
+
+        <h3>Manage Portfolio Sections</h3>
+        <p class="form-note">Add, edit or delete your skills, education, experience and projects below.</p>
+
+        <label>Section</label>
+        <select id="sectionSelect">
+            <option value="skills">Skills</option>
+            <option value="education">Education</option>
+            <option value="experience">Experience</option>
+            <option value="projects">Projects</option>
+        </select>
+
+        <div id="recordFormArea"></div>
+        <div id="manageList"></div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
